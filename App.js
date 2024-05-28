@@ -1,22 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
+import Navigation from './Navigation';
 
 export default function App() {
   return (
-    <GestureHandlerRootView style={{flex:1}}>
-      <PanGestureHandler onGestureEvent={() => console.log('Gesture detected!')}>
-        <View style={styles.box}></View>
-      </PanGestureHandler>
-    </GestureHandlerRootView>
+    <SafeAreaView style={styles.container}>
+      <Navigation></Navigation>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  box: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'blue',
-    margin: 20,
+  container: {
+    flex: 1,
+    backgroundColor: "rgb (191, 201, 202)",
   },
 });
